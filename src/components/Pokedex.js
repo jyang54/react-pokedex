@@ -35,7 +35,6 @@ const Pokedex = (props) => {
   const classes = useStyles();
   const [allPokemons, setAllPokemons] = useState([]);
   const [filter, setFilter] = useState("");
-  const [typeFilter, setTypeFilter] = useState("");
   const [sortProperty, setSortProperty] = useState("ID");
   const [sortOrder, setSortOrder] = useState("ASC");
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -93,7 +92,7 @@ const Pokedex = (props) => {
     getAllPokemonData(response.data.results);
   };
 
-  useEffect(async () => {
+  useEffect(() => {
     getAllPokemonIds();
   }, []);
 
@@ -148,8 +147,7 @@ const Pokedex = (props) => {
   };
 
   const handleTypeChange = (e) => {
-    setTypeFilter(e.target.value);
-    if (e.target.value == "all types") {
+    if (e.target.value === "all types") {
       setIsFiltered(false);
       return;
     }
@@ -160,6 +158,7 @@ const Pokedex = (props) => {
         if (e.target.value === allPokemons[i].types[j].type.name) {
           filterArr.push(allPokemons[i]);
         }
+        return;
       }
     });
 

@@ -75,7 +75,11 @@ const Pokemon = (props) => {
       >
         <Grid item xs={10}>
           <Card className={classes.pokemonInfoCard}>
-            <img style={{ width: "300px", height: "300px" }} src={imageURL} />
+            <img
+              style={{ width: "300px", height: "300px" }}
+              src={imageURL}
+              alt={name}
+            />
             <Typography
               variant="h2"
               style={{ marginLeft: "10%", marginRight: "10%" }}
