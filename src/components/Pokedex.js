@@ -94,6 +94,7 @@ const Pokedex = (props) => {
 
   useEffect(() => {
     getAllPokemonIds();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const sortStateByName = (asc) => {
@@ -158,8 +159,8 @@ const Pokedex = (props) => {
         if (e.target.value === allPokemons[i].types[j].type.name) {
           filterArr.push(allPokemons[i]);
         }
-        return;
       }
+      return;
     });
 
     setFilteredPokemons(filterArr);
