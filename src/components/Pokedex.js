@@ -154,13 +154,12 @@ const Pokedex = (props) => {
     }
     let filterArr = [];
 
-    Object.keys(allPokemons).map((i) => {
+    Object.keys(allPokemons).forEach((i) => {
       for (let j = 0; j < allPokemons[i].types.length; j++) {
         if (e.target.value === allPokemons[i].types[j].type.name) {
           filterArr.push(allPokemons[i]);
         }
       }
-      return;
     });
 
     setFilteredPokemons(filterArr);
